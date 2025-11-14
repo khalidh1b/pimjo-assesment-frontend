@@ -1,0 +1,7 @@
+export { HeroSection } from './hero-section'
+export { StatsSection } from './stats-section'
+export { FeaturesSection } from './features-section'
+export { TemplatesSection } from './templates-section'
+export { TestimonialsSection } from './testimonials-section'
+export { NewsletterSection } from './newsletter-section'
+export { CtaButtons } from './cta-buttons'
