@@ -1,11 +1,12 @@
- "use client"
+"use client"
 
+import { Suspense } from 'react'
 import { useAuthCallback } from '@/hooks/use-auth-callback'
 import { AuthLoading } from '@/components/auth-loading'
 
 export const dynamic = 'force-dynamic'
 
-const AuthCallback = () => {
+const AuthCallbackContent = () => {
   const { isProcessing, error } = useAuthCallback()
 
   if (error) {
@@ -24,6 +25,14 @@ const AuthCallback = () => {
   }
 
   return <AuthLoading />
+}
+
+const AuthCallback = () => {
+  return (
+    <Suspense fallback={<AuthLoading />}>
+      <AuthCallbackContent />
+    </Suspense>
+  )
 };
 
 export default AuthCallback;
